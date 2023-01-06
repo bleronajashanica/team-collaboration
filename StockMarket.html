@@ -1,1 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>STOCK MARKET</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+   <script>
+        $(document).ready(function(){
+          $("button").click(function(){
+            $(".suprise").slideToggle();
+          });
+        });
+        </script>
+    <style>
+        body
+        {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            background: #fcfcfc;
+        }
+        .navbar{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to bottom, white, #dddddd);
+        }
+        .navbar .logo{
+            font-size: 20px;
+            font-weight: 900px;
+            margin: 0 20px;
+        }
+        .icon-bar{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .icon-bar a{
+                text-align: center;
+                padding: 20px 30px;
+                font-size: 25px;
+                color: black;
+            }
+
+            .menu-items
+            {
+                font-size:large;
+                color:black;
+                padding: 5px;
+            }
+            .icon-bar a:hover
+            {
+                background-color:snow;
+                color: black;
+            }
+
+            .title-heading
+            {
+                font-size: 25px;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                color: black;
+            }
+
+            *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+   
+    footer{
+    position: absolute;
+    background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%);
+    height: auto;
+    width: 100%;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;}
+   
+    .footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;}
+   
+    .footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;}
+   
+    .footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;}
+   
+    .socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;}
+   
+    .socials li{
+    margin: 0 10px;}
+   
+    .socials a{
+    text-decoration: none;
+    color: #fff;}
+
+    .socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;}
+   
+    .socials a:hover i{
+    color: aqua;}
+   
+    .footer-bottom{
+    background: #000;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;}
+   
+   
+    .footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;}
+   
+    .footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;}
+   
+
+    .Stock_market_info{
+        background-color: lightgrey;
+     width: 100%;
+     height:400px ;
+    }
+
+    .image_stock
+    {
+       
+        float:right;
+       
+       
+    }
+    .text_content{
+        width: 900px;
+        text-align: left;
+        margin-left: 30px;
+        padding-top: 50px;
+        font-size: 18px;
+        color:black;
+    }
+
+   
+    .Table{
+        margin-right: 20px;
+    margin-left: auto;
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    /*border-collapse: collapse;*/
+    border-spacing: 1px;
+    border-collapse: separate;
+    width: 45%;
+    padding-top: 125px;
+   
+    }
+ 
+
+
+.Table td, .Table th {
+  border: 3px double #ddd;
+  padding: 8px;
+ 
+}
+
+.Table tr{background-color: #f2f2f2;}
+
+.Table tr:hover {background-color: #f2f2f2;}
+
+.Table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: lightgrey;
+  color: darkblue;
+ 
+}
+.image_report{
+float: left;
+}
+
+.table-div
+{
+    width: 100%;
+     height:500px ;
+   background-image: url('photos/bc1.jpg');
+     background-size: cover;
+     background-attachment: fixed;
+     margin-top: -50px;
+    /* margin-top: -60px;*/
+ 
+
+}
+
+.graph-photo
+{
+    padding-top: 80px;
+}
+
+.div-char
+{
+    width: 100%;
+     height:500px ;
+     background-color: #F0F8FF;
+}
+
+.trending-link
+{
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    background: black !important;
+    height: auto;
+    width: 100%;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class='navbar'>
+        <div class='logo'>
+       
+           <h1 class="title-heading" id="stock_id">STOCK MARKET</h1>
+
+        </div>
+        <div class='icon-bar'>
+            <a href="home.html"><i class="fas fa-home">
+                <div class="menu-items">
+                    Home
+
+                </div>
+            </i>
+            </a>
+            <a href="news.html"><i class="fas fa-mail-bulk">
+                <div class="menu-items">
+                    Market News
+
+                </div>
+            </i>
+            </a>
+            <a href="invest.html"><i class="fas fa-business-time">
+                <div class="menu-items">
+                    Invest
+
+                </div>
+            </i>
+            </a>
+            <a href="loginform.html"><i class="fas fa-user-plus">
+                <div class="menu-items">
+                    Log In
+
+                </div>
+            </i>
+            </a>
+            <a href="index.html"><i class="fas fa-info">
+                <div class="menu-items">
+                    About Us
+
+                </div>
+            </i>
+            </a>
+           
+               
+               
+
+
+           
+        </div>
+
+    </div>
+    <div class ="Stock_market_info">
+        <img class ="image_stock" src="1.jpg" alt="Stock_market" width="600" height="400">
+        <div class = "text_content">
+           
+              <h2><u> Does the Stock Market Work?</u></h2>
+            <p><b>Key Takeaways</b></p>
+            <ol>
+                <li>Stocks represent ownership equity in the firm and give shareholders voting
+                rights as well as a residual claim on corporate earnings in the form of capital gains
+                and dividends.</li>
+                <li>Individual and institutional investors come together on stock exchanges to buy and sell
+                    shares in a public venue.</li>
+                <li>Share prices are set by supply and demand as buyers and sellers place orders.</li>
+                <li>Order flow and bid-ask spreads are often maintained
+                     by specialists or market makers to ensure an orderly and fair market.</li>
+                <li>Listing on exchanges may provide companies with liquidity and the ability to raise
+                    capital but it can also mean higher costs and increased regulation.</li>          
+                    </ol>
+        </div>
+        <div id="result">
+            <!--Position information will be inserted here-->
+        </div>
+        <button style ="background-color: #008CBA;
+        border: none;
+            color: white;
+            padding: 15px 32px;
+            margin-left: 90px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            color: black;
+            height: 38px;" type="button" onclick="showPosition();">Show Position</button>
+   
+        <script>
+            function showPosition() {
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+                        document.getElementById("result").innerHTML = positionInfo;
+                    });
+                } else {
+                    alert("Sorry, your browser does not support HTML5 geolocation.");
+                }
+            }
+        </script>
+    </div>
+   
+    <div class="table-div">
+        <img  class ="graph-photo" src="photos/tb_gp.png" width="600px" height="550px" style="float: left;margin-left: 30px;">
+        <table class ="Table" align="center">
+            <tr>
+                <th>Products</th><th>Prices</th><th colspan="2">Percentage Change</th><th>Net Change</th>
+            </tr>
+            <tr><th><th></th><th><mark style="background-color:red;">Yesterday</mark></th><th><mark style="background-color: green;">Today</mark></th><th></th></tr>
+            <tr>
+               <td><a href="https://en.wikipedia.org/wiki/Apple_Inc." target="_blank" style="text-decoration: none;">Apple</a></td><td>124.66&#36;</td><td>1.88&#37;</td><td>1.89&#37;</td><td>-10&#36;</td>
+            </tr>
+            <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Amazon_(company)" target="_blank" style="text-decoration: none;">Amazon</a></td><td>86.01&#36;</td><td>1.86&#37;</td><td>1.88&#37;</td><td>2.21&#36;</td>
+            </tr>
+            <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Tesla,_Inc." target="_blank" style="text-decoration: none;">Tesla</a></td><td>108.62&#36;</td><td>-14.28&#37;</td><td>-14.01&#37;</td><td>11.59&#36;</td>
+           
+            <tr>
+                <td><a href="https://en.wikipedia.org/wiki/Google"target="_blank" style="text-decoration: none;">Google</a></td><td>89.32&#36;</td><td>1.12&#37;</td><td>1.13&#37;</td><td>1&#36;</td>
+            </tr>
+        </table>
+   
+    </div>
+
+    <div class="div-char">
+        <img src="photos/trending1.jpg" width="550px" height="400px" style="float: right;margin-top: 30px;margin-right: 40px;">
+        <canvas id="myChart" style="width:100%;max-width:600px;margin-left: 20px;"></canvas>
+        <a href="https://www.investing.com/equities/trending-stocks?country=india&utm_source=google&utm_medium=cpc&utm_campaign=18545756627&utm_content=626940823156&utm_term=aud-1651846655880:dsa-1546555491534_&GL_Ad_ID=626940823156&GL_Campaign_ID=18545756627&gclid=CjwKCAiAwc-dBhA7EiwAxPRylJrVbPd_-hHa9Bd00VfBKsX0TmrNkTfN6aHj8yA-oGvI-LYBwUswShoC8a8QAvD_BwE" class="trending-link">See What's Trending!</a>
+
+    </div>
+
+
+    <script>
+        var xValues = ["EUR", "USD", "SAR", "TRY", "PKR"];
+        var yValues = [53, 50, 25, 17, 7];
+        var barColors = ["black", "purple","yellow","orange","lightblue"];
+       
+        new Chart("myChart", {
+          type: "bar",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: "Valutes Worth Around the World"
+            }
+          }
+        });
+        </script>
+        <script>
+     
+            const successCallback=(position)=> {
+                console.log(position);
+            };
+            const errorCallback=(error)=>{
+                console.error(error);
+            };
+            navigator.geolocation.getCurrentPosition(successCallback,errorCallback,
+            {
+                enableHighAccuracy:true,
+                timeout:5000
+            });
+ 
+        </script>
+        <p style=" color: darkblue;" class="suprise">Click See What's Trending! for a suprise</p>
+
+        <button style="background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            margin-left: 90px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            color: black;
+            height: 38px;">Hide or Show</button>
+    <footer>
+        <div class="footer-content" style="top: -900px;">
+            <h3>Stock Market</h3>
+            <p>Get the latest news about <i><a href="#stock_id" style="text-decoration: none;">Stock Market</a></i></p>
+            <ul class="socials">
+               
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="mailto: abc@example.com"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+       
+        </div>
+        <div class="footer-bottom">
+            <address>copyright &copy;2021  designed by <span><abbr title="Fakulteti i Inxhinierise Elektrike dhe Kompjuterike">FIEK</span></abbr></address>
+        </div>
+    </footer>  
+
+
+
+</body>
+
+</html>
 
